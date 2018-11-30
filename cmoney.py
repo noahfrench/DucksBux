@@ -187,6 +187,10 @@ def verify():
 		ledgerFile.write(sourceAddress + " transferred " + amount + " to " + destAddress + "\n")
 		ledgerFile.close()
 		print("Any fund request (i.e., from Bank_of_1,000_Quacks) is considered valid; written to the ledger")
+	elif not validSig:
+		print("The signature is not valid.")
+	elif not enoughFunds:
+		print("The sender does not have sufficient funds in their DucksBux wallet.")
 
 	return None
 
